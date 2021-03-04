@@ -26,11 +26,13 @@ public class PlayingCard implements Comparable<PlayingCard>{
     @Override
     public int compareTo(PlayingCard other) {
         // Compare value
-        if (value.compareTo(other.getValue()) == 0){
+        int valueCompare = value.compareTo(other.getValue());
+        if (valueCompare == 0){
             // Same value
+            return valueCompare);
+        }     
+        // If we reach this point, the cards have the same value   
             return suit.compareTo(other.getSuit());
-        } else {
-            return value.compareTo(other.getValue());
         }
     }
 }
