@@ -1,38 +1,38 @@
 package csc241;
 
-public class PlayingCard implements Comparable<PlayingCard>{
+public class PlayingCard implements Comparable<PlayingCard> {
 
     //String[] suits = {"Hearts", "Clubs", "Diamonda", "Spades"};
     private Suit suit;
-    private Value value;
+    private Value cardValue;
 
-    public PlayingCard(Value value, Suit suit){
-        this.value = value;
+    public PlayingCard(Value cardValue, Suit suit) {
+        this.cardValue = cardValue;
         this.suit = suit;
     }
 
-    public String toString(){
-        return value.name() + " of " + suit.toString();
+    public String toString() {
+        return cardValue.name() + " of " + suit.toString();
     }
 
     public Suit getSuit() {
         return suit;
     }
 
-    public Value getValue() {
-        return value;
+    public Value getCardValue() {
+        return cardValue;
     }
 
     @Override
     public int compareTo(PlayingCard other) {
         // Compare value
-        int valueCompare = value.compareTo(other.getValue());
-        if (valueCompare == 0){
-            // Same value
-            return valueCompare);
-        }     
-        // If we reach this point, the cards have the same value   
-            return suit.compareTo(other.getSuit());
+        int valueCompare = cardValue.compareTo(other.getCardValue());
+        if (valueCompare != 0) {
+            // use the card value to order
+            return valueCompare;
         }
+        // If we reach this point, the cards have the same value   
+        return suit.compareTo(other.getSuit());
     }
 }
+
