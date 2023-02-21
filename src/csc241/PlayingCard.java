@@ -2,7 +2,7 @@ package csc241;
 
 public class PlayingCard implements Comparable<PlayingCard> {
 
-    //String[] suits = {"Hearts", "Clubs", "Diamonda", "Spades"};
+    //String[] suits = {"Hearts", "Clubs", "Diamonds", "Spades"};
     private Suit suit;
     private Value cardValue;
 
